@@ -18,14 +18,14 @@ public class Principal {
 		
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		
 		System.out.println("Dados Aluguel de Carro:");
 		System.out.print("Carro: ");
 		String carro = sc.nextLine();
-		System.out.print("Data e Hora retirada (dd/MM/yyyy HH:mm:ss): ");
+		System.out.print("Data e Hora retirada (dd/MM/yyyy HH:mm): ");
 		Date retirada = sdf.parse(sc.nextLine());
-		System.out.print("Data e Hora devolução (dd/MM/yyyy HH:mm:ss): ");
+		System.out.print("Data e Hora devolução (dd/MM/yyyy HH:mm): ");
 		Date devolucao = sdf.parse(sc.nextLine());
 		
 		AluguelCarro aluguel = new AluguelCarro(retirada, devolucao, new Veiculo(carro));
@@ -38,7 +38,11 @@ public class Principal {
 		ServicoDeAluguel servico = new ServicoDeAluguel(precoHora, precoDia, new ServicoImpostoBrasil());
 		
 		System.out.println("Fatura:");
-		System.out.println(new Fatura().toString());
+		
+		//processar a fatura
+		servico.processarFatura(aluguel);
+		
+		System.out.println(aluguel.getFatura().toString());
 	}
 
 }
