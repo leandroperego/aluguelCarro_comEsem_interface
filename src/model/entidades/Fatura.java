@@ -32,4 +32,11 @@ public class Fatura {
 	public Double pagamentoTotal() {
 		return this.pagamentoBasico + this.imposto;
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("Valor Aluguel: %.2f%n"
+							+ "Valor Imposto: %.2f%n"
+							+ "Valor Total a Pagar: %.2f", this.pagamentoBasico, this.imposto, this.pagamentoTotal());
+	}
 }
