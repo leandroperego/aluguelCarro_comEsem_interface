@@ -7,12 +7,12 @@ public class ServicoDeAluguel {
 
 	private Double precoPorHora;
 	private Double precoPorDia;
-	private ServicoImpostoBrasil imposto;
+	private ServicoImposto imposto;
 	
 	public ServicoDeAluguel() {
 	}
 
-	public ServicoDeAluguel(Double precoPorHora, Double precoPorDia, ServicoImpostoBrasil imposto) {
+	public ServicoDeAluguel(Double precoPorHora, Double precoPorDia, ServicoImposto imposto) {
 		this.precoPorHora = precoPorHora;
 		this.precoPorDia = precoPorDia;
 		this.imposto = imposto;
@@ -32,10 +32,6 @@ public class ServicoDeAluguel {
 
 	public void setPrecoPorDia(Double precoPorDia) {
 		this.precoPorDia = precoPorDia;
-	}
-
-	public ServicoImpostoBrasil getImposto() {
-		return imposto;
 	}
 
 	public void setImposto(ServicoImpostoBrasil imposto) {
